@@ -15,9 +15,16 @@
     max-width: 100%;
 }
 
-p, label {
+p {
     color: chocolate;
     font-family: Calibri, serif;
+}
+
+label {
+    float: top;
+    color: yellow;
+    font-family: press_start_2pregular, "Arial Black", fantasy;
+    font-variant-caps: all-small-caps;
 }
 
 .arcadeText {
@@ -26,7 +33,7 @@ p, label {
     font-variant-caps: all-small-caps;
 }
 
-h1 {
+h1, h2 {
     color: yellow;
     font-family: press_start_2pregular, "Arial Black", fantasy;
     font-variant-caps: all-small-caps;
@@ -36,8 +43,4 @@ h3 {
     color: lightyellow;
     font-family: press_start_2pregular, "Arial Black", fantasy;
     font-variant-caps: all-small-caps;
-}
-
-body {
-    background-color: black;
 }

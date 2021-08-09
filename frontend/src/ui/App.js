@@ -4,7 +4,14 @@ import React from 'react'
 import {Navigation} from "./Navigation";
 import {Home} from "./Home";
 
-document.body.style = 'background: black;';
+//import "../assets/images/stars_386913main_Swift_M31_large_UV_Cropped_Rot90.jpg";
+import bgImage from "../assets/images/stars_386913main_Swift_M31_large_UV.jpg";
+
+document.body.style.backgroundColor = 'black';
+//document.body.style = 'backgroundImage: {bgImage}';
+//document.body.style.backgroundRepeat = 'no-repeat';
+//document.body.style.backgroundPosition = 'center';
+document.body.style.backgroundSize = '100%';
 
 export const App = () => (
     <>

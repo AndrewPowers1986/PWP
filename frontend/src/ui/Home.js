@@ -4,6 +4,7 @@ import {PortfolioHeader} from "./PortfolioHeader";
 import {Showcase} from "./Showcase";
 import {ContactForm} from "./ContactForm";
 import {Container} from "react-bootstrap";
+import {PortfolioFooter} from "./PortfolioFooter";
 
 export function Home () {
     return (
@@ -13,6 +14,7 @@ export function Home () {
             <AboutMe/>
             <Showcase/>
             <ContactForm/>
+            <PortfolioFooter/>
         </>
     )
 }
