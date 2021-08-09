@@ -1,14 +1,19 @@
 import React from "react";
-import AP_Logo from "./images/AP_Logo.png"
-import {Image} from "react-bootstrap";
+import AP_Logo from "../assets/images/AP_Logo.svg"
+import {Container, Image} from "react-bootstrap";
 
 export function PortfolioHeader () {
     return (
         <>
-            <div className="text-center">
-                <Image src={AP_Logo}/>
-                    <h1>Andrew Powers</h1>
-            </div>
+            <Container className="border border-1 rounded-3 border-primary my-5 p-1">
+                <Container className="border border-1 rounded-3 border-primary">
+                    <div className="text-center">
+                        <h1>High Score!</h1>
+                        <Image src={AP_Logo}/>
+                        <h1>Andrew K. Powers</h1>
+                    </div>
+                </Container>
+            </Container>
         </>
     )
 }

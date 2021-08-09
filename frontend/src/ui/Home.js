@@ -3,12 +3,12 @@ import {AboutMe} from "./AboutMe";
 import {PortfolioHeader} from "./PortfolioHeader";
 import {Showcase} from "./Showcase";
 import {ContactForm} from "./ContactForm";
-import {SectionHeader} from "./SectionHeader";
+import {Container} from "react-bootstrap";
 
 export function Home () {
     return (
         <>
-            <SectionHeader text=""/>
+            <Container className="p-5"/>
             <PortfolioHeader/>
             <AboutMe/>
             <Showcase/>

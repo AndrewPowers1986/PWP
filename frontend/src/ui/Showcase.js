@@ -1,7 +1,7 @@
 import React from "react";
 import {Container} from "react-bootstrap";
 
-import blankImg from "./images/150x150.png";
+import blankImg from "../assets/images/150x150.png";
 import {ShowcaseItem} from "./ShowcaseItem";
 import {SectionHeader} from "./SectionHeader";
 import * as ReactDOM from "react-dom";
@@ -50,7 +50,7 @@ export function Showcase () {
     return (
         <>
             <SectionHeader text={"Some examples of my work"}/>
-            <Container id="showcase" className="d-flex flex-row justify-content-around" fluid="true">
+            <Container id="showcase" className="bg-transparent d-flex flex-row justify-content-around" fluid="true">
                 {visibleShowcaseItems}
             </Container>
             <Container className="d-flex justify-content-around mb-5">
@@ -82,8 +82,6 @@ function initOrder () {
 }
 
 function updateOrderRight () {
-    console.log('Updating order right');
-    console.log('From:' + showcaseOrder);
     for(let i = 0; i < showcaseOrder.length; i++) {
         if(showcaseOrder[i] === 0) {
             showcaseOrder[i] = showcaseItems.length - 1;
@@ -91,14 +89,11 @@ function updateOrderRight () {
             showcaseOrder[i]--;
         }
     }
-    console.log('From:' + showcaseOrder);
     updateShowcase();
 }
 
 
 function updateOrderLeft () {
-    console.log('Updating order left');
-    console.log('From:' + showcaseOrder);
     for(let i = 0; i < showcaseOrder.length; i++) {
         if(showcaseOrder[i] === showcaseItems.length - 1) {
             showcaseOrder[i] = 0;
@@ -106,7 +101,6 @@ function updateOrderLeft () {
             showcaseOrder[i]++;
         }
     }
-    console.log('From:' + showcaseOrder);
     updateShowcase();
 }
 

@@ -4,6 +4,8 @@ import React from 'react'
 import {Navigation} from "./Navigation";
 import {Home} from "./Home";
 
+document.body.style = 'background: black;';
+
 export const App = () => (
     <>
         <Navigation/>

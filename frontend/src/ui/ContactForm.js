@@ -6,7 +6,7 @@ export function ContactForm () {
     return (
         <>
             <SectionHeader text={"Get in touch"}/>
-            <Container>
+            <Container className="bg-transparent">
                 <form className="d-flex flex-column">
                     <label>
                         Name:
