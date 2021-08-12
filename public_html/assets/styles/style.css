@@ -1,0 +1,272 @@
+@font-face {
+    font-family: 'press_start_2pregular';
+    src: url('../fonts/pressstart2p-vav7-webfont.eot');
+    src: url('../fonts/pressstart2p-vav7-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/pressstart2p-vav7-webfont.woff2') format('woff2'),
+    url('../fonts/pressstart2p-vav7-webfont.woff') format('woff'),
+    url('../fonts/pressstart2p-vav7-webfont.ttf') format('truetype'),
+    url('../fonts/pressstart2p-vav7-webfont.svg#press_start_2pregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: black;
+    border-left: solid blue 1px;
+    border-right: solid blue 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    /*background-image: url("../images/stars_386913main_Swift_M31_large_UV_Cropped_Rot90.jpg");*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center;*/
+    /*background-size: cover;*/
+}
+
+.innerBody {
+    border-left: solid blue 1px;
+    border-right: solid blue 1px;
+}
+
+section {
+    background-color: transparent;
+}
+
+.img-link {
+    max-height: 2em;
+    max-width: 100%;
+}
+
+p {
+    color: chocolate;
+    font-family: Calibri, serif;
+    font-size: large;
+}
+
+label {
+    float: top;
+    color: yellow;
+    font-family: press_start_2pregular, "Arial Black", fantasy;
+    font-variant-caps: all-small-caps;
+}
+
+.sectionHeader {
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 5em;
+}
+
+.sectionHeaderImage {
+    background-image: url("../images/TextBanner_Dissolve3dPixels_Blue.png");
+    background-repeat: no-repeat;
+    background-size: 75% 100%;
+}
+
+.arcadeText {
+    color: lightyellow;
+    font-family: press_start_2pregular, "Arial Black", fantasy;
+    font-variant-caps: all-small-caps;
+}
+
+.arcadeTextButton {
+    color: yellow;
+    font-family: press_start_2pregular, "Arial Black", fantasy;
+    font-variant-caps: all-small-caps;
+    background-color: transparent;
+    border: transparent;
+}
+
+.arcadeTextSectionHeader {
+    color: lightyellow;
+    font-family: press_start_2pregular, "Arial Black", fantasy;
+    font-variant-caps: all-small-caps;
+}
+
+.arcadeTextLink {
+    color: lightyellow;
+    font-family: press_start_2pregular, "Arial Black", fantasy;
+    font-variant-caps: all-small-caps;
+}
+
+.navbarImage {
+    background-image: url("../images/TextBanner_Dissolve3dPixels_Blue.png");
+    background-repeat: no-repeat;
+    background-size: 75% 100%;
+}
+
+h1, h2 {
+    color: yellow;
+    font-family: press_start_2pregular, "Arial Black", fantasy;
+    font-variant-caps: all-small-caps;
+}
+
+input, textarea {
+    -webkit-flex: 1;
+}
+
+.top-centered {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-centered {
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+}
+
+.carousel {
+    position: relative;
+    height: 600px;
+    width: 80%;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+}
+
+.carousel_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel_track-container {
+    background: transparent;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel_track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 250ms ease-in;
+}
+
+.carousel_slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel_button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    cursor: pointer;
+}
+
+.carousel_button_left {
+    left: -40px;
+}
+
+.carousel_button_right {
+    right: -40px;
+}
+
+.carousel_button img {
+    width: 12px;
+}
+
+.carousel_nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.carousel_indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: rgba(128,128,128,0.3);
+    margin: 0 12px;
+    cursor: pointer;
+}
+
+.carousel_indicator.current-slide {
+    background: rgba(128,128,128,.75);
+}
+
+.is-hidden { display: none }
+
+.pacPelletShadow {
+    background-color: #cccc00;
+    height: 1em;
+    width: 1em;
+    position: absolute;
+    border-radius: 50%;
+    animation-name: fallToBottom, pulse;
+    animation-timing-function: linear, ease-in;
+    animation-duration: 20s, 1s;
+    animation-iteration-count: infinite, infinite;
+    animation-fill-mode: forwards, forwards;
+}
+
+.pacPellet {
+    background-color: #ffff00;
+    height: .75em;
+    width: .75em;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    border-radius: 50%;
+}
+
+@keyframes fallToBottom {
+    0% {
+        top: -5%;
+        left: 2%;
+    }
+    100% {
+        top: 200%;
+        left: 2%;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9, 0.9);
+        -webkit-transform: scale(0.9, 0.9);
+    }
+
+    10% {
+        transform: scale(1.15, 1.15);
+        -webkit-transform: scale(1.1, 1.1);
+    }
+
+    20% {
+        transform: scale(1.0, 1.0);
+        -webkit-transform: scale(1.0, 1.0);
+    }
+
+    100% {
+        transform: scale(1.0, 1.0);
+        -webkit-transform: scale(1.0, 1.0);
+    }
+}
+
+body {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
