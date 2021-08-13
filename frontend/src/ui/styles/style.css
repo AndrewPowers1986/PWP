@@ -1,0 +1,16 @@
+.img-link {
+    max-height: 2em;
+    max-width: 100%;
+}
+
+:root {
+    background-color: black;
+}
+
+p, label, h1, h3 {
+    color: white;
+}
+
+div {
+    background-color: black;
+}

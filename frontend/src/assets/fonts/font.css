@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'press_start_2pregular';
+    src: url('pressstart2p-vav7-webfont.eot');
+    src: url('pressstart2p-vav7-webfont.eot?#iefix') format('embedded-opentype'),
+    url('pressstart2p-vav7-webfont.woff2') format('woff2'),
+    url('pressstart2p-vav7-webfont.woff') format('woff'),
+    url('pressstart2p-vav7-webfont.ttf') format('truetype'),
+    url('pressstart2p-vav7-webfont.svg#press_start_2pregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
