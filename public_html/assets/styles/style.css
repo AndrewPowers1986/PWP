@@ -12,7 +12,9 @@
     font-style: normal;
 }
 
-
+:root {
+    --mario_bricks: url("../images/mariobricks.png");
+}
 
 body {
     background-color: black;
@@ -24,6 +26,18 @@ body {
     background-repeat: repeat;
     background-position: center;
     background-size: 800px;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .innerBody {
@@ -31,14 +45,106 @@ body {
     border-right: solid blue 2px;
 }
 
+/* navigation styles */
+
+header {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    z-index: 999;
+    background-image: url("../images/mariobricks.png");
+    background-size: 70px;
+    background-repeat: no-repeat;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav li:hover {
+    margin-bottom:.6rem;
+}
+
+nav li:hover a{
+    color: lightyellow;
+    font-size: 1.5rem;
+}
+
+nav a {
+    color: yellow;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: press_start_2pregular, "Arial Black", fantasy;
+    font-variant-caps: all-small-caps;
+    background-color: black;
+    padding: -1rem;
+    box-shadow: 0 0 5px 5px #000000;
+    opacity: 0;
+    transition: opacity 350ms ease-in-out;
+}
+
+.nav-toggle-custom {
+    display: none;
+}
+
+.nav-toggle-custom:checked ~ nav{
+    transform: scale(1,1);
+}
+
+.nav-toggle-custom:checked ~ nav a{
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 100ms
+}
+
+.nav-toggle-custom:checked + .nav-toggle-label {
+    color: lightyellow;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: -5px;
+    left: 21px;
+}
+
+.nav-toggle-label span {
+    font-size: 3em;
+}
+
+::selection{
+    background: none;
+}
+
 section {
     background-color: transparent;
 }
 
-.img-link {
-    max-height: 2em;
-    max-width: 100%;
+h1, h2 {
+    color: yellow;
+    font-family: press_start_2pregular, "Arial Black", fantasy;
+    font-variant-caps: all-small-caps;
+}
 
+input, textarea {
+    -webkit-flex: 1;
+    border: blue solid 2px;
 }
 
 p {
@@ -53,170 +159,67 @@ label {
     font-variant-caps: all-small-caps;
 }
 
-
-
-/*.aboutMeHeaderImage {*/
-/*    background-image: url("../images/TextBanner_Dissolve3dPixels_Blue.png");*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: 75% 100%;*/
-/*}*/
-
-@media only screen and (min-width: 768px){
-    .navbarImage {
-        background-image: url("../images/mariobricks.png");
-        background-repeat: repeat-x;
-        background-size: 70px;
-        background-position-x: center;
-    }
-    .sectionHeader {
-        padding-left: 5em;
-        padding-right: 5em;
-        padding-top: 1em;
-        padding-bottom: 1em;
-        margin-bottom: 5em;
-    }
-    .aboutMeHeaderImage {
-        background-image: url("../images/TextBanner_Dissolve3dPixels_Blue.png");
-        background-repeat: no-repeat;
-        background-size: 75% 100%;
-    }
-    .showcaseHeaderImage {
-        background-image: url("../images/donkeykong_redbeam.png");
-        background-repeat: no-repeat;
-        background-size: 75% 100%;
-    }
-    .arcadeTextSectionHeader {
-        color: lightyellow;
-        font-family: press_start_2pregular, "Arial Black", fantasy;
-        font-variant-caps: all-small-caps;
-    }
-    .gameboyScreenWrapper {
-        position: relative;
-        height: 450px;
-        width: 600px;
-        margin-top: 0;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 15rem;
-        padding-top: 50px;
-        padding-bottom: 10px;
-        background-color: gray;
-        border-bottom-left-radius: 25px;
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
-        border-bottom-right-radius: 100px;
-        box-shadow: 0 0 5px #404040 inset;
-    }
-
-    .carousel {
-        position: relative;
-        height: 90%;
-        width: 70%;
-        margin: auto;
-        box-shadow: 0 0 30px 5px #ffffff;
-    }
-
-    #powerLightWrapper {
-        position: absolute;
-        top: 40%;
-        left: 7%;
-        height: 10px;
-        width: 10px;
-        background: red;
-        border: red solid 1px;
-        border-radius: 50%;
-        box-shadow: 0 0 10px red;
-    }
-
-    .carousel_image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-top: 2px solid #00000088;
-        border-left: 2px solid #00000088;
-    }
-
-    .carousel_button_left_position {
-        position: absolute;
-        bottom: -200px;
-        right: 120px;
-    }
-
-    .carousel_button_right_position {
-        position: absolute;
-        bottom: -165px;
-        right: 20px;
-    }
+.navbarImage {
+    background-image: url("../images/mariobricks.png");
+    background-repeat: repeat-x;
+    background-position-x: center;
+}
+.sectionHeader {
+    padding: 1em;
+    margin-bottom: 1em;
+    background-repeat: no-repeat;
+    background-size: 100% 40%;
+    background-position: center;
+}
+.aboutMeHeaderImage {
+    background-image: url("../images/TextBanner_Dissolve3dPixels_Blue.png");
+}
+.showcaseHeaderImage {
+    background-image: url("../images/donkeykong_redbeam.png");
+}
+.arcadeTextSectionHeader {
+    color: lightyellow;
+    font-family: press_start_2pregular, "Arial Black", fantasy;
+    font-variant-caps: all-small-caps;
+    font-size: 1em;
+}
+.gameboyScreenWrapper {
+    position: relative;
 }
 
-@media only screen and (max-width: 768px) {
-    .navbarImage {
-        background-image: url("../images/mariobricks.png");
-        background-repeat: repeat-x;
-        background-position-x: center;
-    }
-    .sectionHeader {
-        padding: 1em;
-        margin-bottom: 1em;
-    }
-    .aboutMeHeaderImage {
-        background-image: url("../images/TextBanner_Dissolve3dPixels_Blue.png");
-        background-repeat: no-repeat;
-        background-size: 100% 40%;
-        background-position: center;
-    }
-    .showcaseHeaderImage {
-        background-image: url("../images/donkeykong_redbeam.png");
-        background-repeat: no-repeat;
-        background-size: 100% 40%;
-        background-position: center;
-    }
-    .arcadeTextSectionHeader {
-        color: lightyellow;
-        font-family: press_start_2pregular, "Arial Black", fantasy;
-        font-variant-caps: all-small-caps;
-        font-size: 1em;
-    }
-    .gameboyScreenWrapper {
-        position: relative;
-    }
-
-    .carousel {
-        position: relative;
-        height: 600px;
-        width: 100%;
-        margin: auto;
-        border: 2px solid blue;
-        border-radius: 10px;
-        padding: 3px;
-    }
-
-    #gameboyPowerLight {
-        display: none;
-    }
-
-    .carousel_image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border: 2px solid blue;
-        border-radius: 10px;
-    }
-
-    .carousel_button_left_position {
-        position: absolute;
-        left: 5%;
-        bottom: 5%;
-    }
-
-    .carousel_button_right_position {
-        position: absolute;
-        right: 5%;
-        bottom: 5%;
-    }
+.carousel {
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    margin: auto;
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding: 3px;
 }
 
+#gameboyPowerLight {
+    display: none;
+}
 
+.carousel_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid blue;
+    border-radius: 10px;
+}
+
+.carousel_button_left_position {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+}
+
+.carousel_button_right_position {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+}
 
 .carousel_button_appearance {
     border: 0;
@@ -280,6 +283,12 @@ label {
     fill: #802862;
     stroke-width: 1px;
 }
+
+.img-link {
+    max-height: 2em;
+    max-width: 100%;
+}
+
 .footerContainer {
     height:50px;
 }
@@ -319,17 +328,6 @@ label {
     background-position-x: center;
 }
 
-h1, h2 {
-    color: yellow;
-    font-family: press_start_2pregular, "Arial Black", fantasy;
-    font-variant-caps: all-small-caps;
-}
-
-input, textarea {
-    -webkit-flex: 1;
-    border: blue solid 2px;
-}
-
 .top-centered {
     position: absolute;
     left: 50%;
@@ -343,8 +341,6 @@ input, textarea {
     top: 90%;
     transform: translate(-50%, -50%);
 }
-
-
 
 /*.carousel_nav {*/
 /*    display: flex;*/
@@ -368,9 +364,14 @@ input, textarea {
 
 .is-hidden { display: none }
 
+#top-spacer {
+    height: 100px;
+}
+
 #AP_Logo {
     stroke: lightyellow;
     fill: lightyellow;
+    max-width: 80%;
 }
 
 #AP_Logo path {
@@ -417,73 +418,147 @@ input, textarea {
     font-variant-caps: all-small-caps;
 }
 
-.pacPelletShadow {
-    background-color: #cccc00;
-    height: 1em;
-    width: 1em;
-    position: absolute;
-    border-radius: 50%;
-    animation-name: fallToBottom, pulse;
-    animation-timing-function: linear, ease-in;
-    animation-duration: 20s, 1s;
-    animation-iteration-count: infinite, infinite;
-    animation-fill-mode: forwards, forwards;
+
+
+@media screen and (min-width: 768px){
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        height: 70px;
+        z-index: 999;
+        background-image: url("../images/mariobricks.png");
+        background-size: 70px;
+        background-repeat: repeat-x;
+        background-position: center;
+    }
+
+    nav {
+        all: unset;
+        text-align: center;
+        top: 10%;
+
+    }
+
+    nav a {
+        all:unset;
+        color: yellow;
+        text-decoration: none;
+        font-size: 2rem;
+        font-family: press_start_2pregular, "Arial Black", fantasy;
+        font-variant-caps: all-small-caps;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-top: .5rem;
+    }
+
+    nav li:hover {
+        cursor: pointer;
+        margin-top: .1rem;
+    }
+
+    nav li:hover a{
+        color: lightyellow;
+        font-size: 2.4rem;
+    }
+
+    .sectionHeader {
+        padding: 1em;
+        margin-bottom: 1em;
+        background-repeat: no-repeat;
+        background-size: 100% 40%;
+        background-position: center;
+    }
+    .sectionHeader {
+        padding-left: 5em;
+        padding-right: 5em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        margin-bottom: 5em;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 75% 100%;
+    }
+    .arcadeTextSectionHeader {
+        font-size: 2em;
+    }
+    .gameboyScreenWrapper {
+        position: relative;
+        height: 450px;
+        width: 600px;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15rem;
+        padding-top: 50px;
+        padding-bottom: 10px;
+        background-color: gray;
+        border-bottom-left-radius: 25px;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 100px;
+        box-shadow: 0 0 5px #404040 inset;
+    }
+
+    .carousel {
+        position: relative;
+        height: 90%;
+        width: 70%;
+        margin: auto;
+        padding: 0;
+        border: none;
+        border-radius: unset;
+        box-shadow: 0 0 30px 5px #ffffff;
+    }
+
+    #powerLightWrapper {
+        position: absolute;
+        top: 40%;
+        left: 7%;
+        height: 10px;
+        width: 10px;
+        background: red;
+        border: red solid 1px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px red;
+    }
+
+    .carousel_image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top: 2px solid #00000088;
+        border-left: 2px solid #00000088;
+        border-bottom: none;
+        border-right: none;
+        border-radius: unset;
+    }
+
+    .carousel_button_left_position {
+        position: absolute;
+        left: unset;
+        bottom: -200px;
+        right: 120px;
+    }
+
+    .carousel_button_right_position {
+        position: absolute;
+        bottom: -165px;
+        right: 20px;
+    }
 }
 
-.pacPellet {
-    background-color: #ffff00;
-    height: .75em;
-    width: .75em;
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    border-radius: 50%;
-}
-
-@keyframes fallToBottom {
-    0% {
-        top: -5%;
-        left: 2%;
-    }
-    100% {
-        top: 200%;
-        left: 2%;
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(0.9, 0.9);
-        -webkit-transform: scale(0.9, 0.9);
-    }
-
-    10% {
-        transform: scale(1.15, 1.15);
-        -webkit-transform: scale(1.1, 1.1);
-    }
-
-    20% {
-        transform: scale(1.0, 1.0);
-        -webkit-transform: scale(1.0, 1.0);
-    }
-
-    100% {
-        transform: scale(1.0, 1.0);
-        -webkit-transform: scale(1.0, 1.0);
-    }
-}
-
-body {
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
