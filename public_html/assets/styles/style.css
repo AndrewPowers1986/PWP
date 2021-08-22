@@ -211,44 +211,24 @@ label {
 
 .carousel_button_left_position {
     position: absolute;
-    left: 5%;
-    bottom: 5%;
+    left: 0%;
+    bottom: 40%;
 }
 
 .carousel_button_right_position {
     position: absolute;
-    right: 5%;
-    bottom: 5%;
+    right: 0%;
+    bottom: 40%;
 }
 
 .carousel_button_appearance {
     border: 0;
     cursor: pointer;
-    background: #953C77;
+    background: transparent;
     border:none;
     border-radius: 50%;
     width: 80px;
     height: 80px;
-    box-shadow: 5px 5px 0 1px #802862, 0 0 30px 10px #802862 inset;
-}
-
-.carousel_button_appearance:active {
-    width: 81px;
-    height: 81px;
-    box-shadow: 0 0 30px 10px #802862 inset;
-    transform: translate(5px, 5px);
-}
-
-.carousel_button_appearance_active {
-    border: 0;
-    cursor: pointer;
-    background: #953C77;
-    border:none;
-    border-radius: 50%;
-    width: 81px;
-    height: 81px;
-    box-shadow: 0 0 30px 10px #802862 inset;
-    transform: translate(5px, 5px);
 }
 
 .carousel_track-container {
@@ -279,14 +259,32 @@ label {
     position: absolute;
     left: 0;
     top: 0;
-    stroke: #802862;
-    fill: #802862;
+    stroke: #88888888;
+    fill: #88888888;
     stroke-width: 1px;
+    transform:scale(.7);
 }
 
 .img-link {
     max-height: 2em;
     max-width: 100%;
+}
+
+#contactHeader {
+    position: relative;
+}
+
+#xpBar {
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+    z-index: -1;
+    background-color: green;
+    box-shadow: 0 0 5px 5px greenyellow inset;
+    height: 20%;
+    width: 0%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .footerContainer {
@@ -332,14 +330,15 @@ label {
     position: absolute;
     left: 50%;
     top: 10%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 }
 
 .bottom-centered {
     position: absolute;
     left: 50%;
-    top: 90%;
-    transform: translate(-50%, -50%);
+    top: unset;
+    bottom: 10%;
+    transform: translateX(-50%);
 }
 
 /*.carousel_nav {*/
@@ -559,6 +558,50 @@ label {
         position: absolute;
         bottom: -165px;
         right: 20px;
+    }
+
+    .carousel_button_appearance {
+        border: 0;
+        cursor: pointer;
+        background: #953C77;
+        border:none;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        box-shadow: 5px 5px 0 1px #802862, 0 0 30px 10px #802862 inset;
+    }
+
+    .carousel_button_appearance:active {
+        width: 81px;
+        height: 81px;
+        box-shadow: 0 0 30px 10px #802862 inset;
+        transform: translate(5px, 5px);
+    }
+
+    .carousel_button_appearance_active {
+        border: 0;
+        cursor: pointer;
+        background: #953C77;
+        border:none;
+        border-radius: 50%;
+        width: 81px;
+        height: 81px;
+        box-shadow: 0 0 30px 10px #802862 inset;
+        transform: translate(5px, 5px);
+    }
+
+    .SVG_arrow {
+        position: absolute;
+        left: 0;
+        top: 0;
+        stroke: #802862;
+        fill: #802862;
+        stroke-width: 1px;
+        transform: unset;
+    }
+
+    #xpBar {
+        bottom: 43%;
     }
 }
 
