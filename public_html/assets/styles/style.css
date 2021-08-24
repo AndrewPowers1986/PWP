@@ -22,6 +22,7 @@ body {
     border-right: solid blue 2px;
     padding-left: 3px;
     padding-right: 3px;
+    position: relative;
     background-image: url("../images/twinklingPixelStars.gif");
     background-repeat: repeat;
     background-position: center;

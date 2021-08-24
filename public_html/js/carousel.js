@@ -1,7 +1,5 @@
 const track = document.querySelector('.carousel_track');
 const slides = Array.from(track.children);
-const nextButton = document.querySelector('.carousel_button_right');
-const prevButton = document.querySelector('.carousel_button_left');
 const nextButtonText = document.getElementById('rightArrow');
 const prevButtonText = document.getElementById('leftArrow');
 //const dotsNav = document.querySelector('.carousel_nav');
@@ -99,8 +97,6 @@ function updateCurrentSlide(currentSlide, targetSlide) {
 }
 
 /*Original Code for Carousel With Buttons*/
-
-
 //arrange the slides next to one another
 const setSlidePosition = (slide, index) => {
     slide.style.left = slideWidth * index + 'px';
@@ -108,20 +104,12 @@ const setSlidePosition = (slide, index) => {
 
 slides.forEach(setSlidePosition);
 
-window.onresize = (e) => {
-    slides.forEach(setSlidePosition);
-}
-
-
 const moveToSlide = (currentSlide, targetSlide) => {
     track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
     updateCurrentSlide(currentSlide, targetSlide);
 }
 
-// const updateDots = (currentDot, targetDot) => {
-//     currentDot.classList.remove('current-slide');
-//     targetDot.classList.add('current-slide');
-// }
+
 
 const hideShowArrows = (targetIndex) => {
     if(targetIndex === 0) {
@@ -161,6 +149,11 @@ nextButtonText.addEventListener('click', e => {
     //updateDots(currentDot, nextDot);
     hideShowArrows(nextIndex);
 })
+
+// const updateDots = (currentDot, targetDot) => {
+//     currentDot.classList.remove('current-slide');
+//     targetDot.classList.add('current-slide');
+// }
 
 //click nav indicators, move to that slide
 // dotsNav.addEventListener('click', e => {
